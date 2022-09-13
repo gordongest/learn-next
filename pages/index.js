@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Navbar from "../components/Navbar";
 import styles from '../styles/Home.module.css'
 
 const buttonStyles = {
@@ -17,10 +16,6 @@ const Hello = () => {
     console.log("bing")
     return (
         <div /*className={styles.grid}*/>
-            <Navbar />
-            <Link href="about">
-                <button style={buttonStyles}>About</button>
-            </Link>
             <Link href="contact">
                 <h1 className={styles.card}><a>this is a NextJS page, homey</a></h1>
             </Link>
