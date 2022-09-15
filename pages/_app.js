@@ -1,15 +1,16 @@
+import Link from "next/link";
 import Navbar from "../components/Navbar";
 import '../styles/globals.css'
 
 const styles = {
-    footer: {
-      position: "fixed",
-      bottom: "0px",
-      width: "100%"
-    },
-    content: {
-        textAlign: "center"
-    }
+    position: "fixed",
+    bottom: "0px",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    textAlign: "center",
+    marginBottom: "0",
+    backgroundColor: "#0066CC"
 }
 
 const MyApp = ({ Component, pageProps }) => {
@@ -17,7 +18,11 @@ const MyApp = ({ Component, pageProps }) => {
         <>
             <Navbar />
             <Component {...pageProps} />
-            <h1 className="footer content" style={styles}>it a footer</h1>
+            <Link href="/">
+                <div style={styles}>
+                    <h2 className="footer content" style={{cursor: "pointer"}}>it a footer</h2>
+                </div>
+            </Link>
         </>
     );
 }

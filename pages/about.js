@@ -1,20 +1,25 @@
+import axios from "axios";
+import { v4 as uuid } from "uuid";
 import styles from '../styles/Home.module.css'
 
-const AboutPage = ({ person }) => {
+const AboutPage = ({ ships }) => {
     return (
         <>
-            <h2 className={styles.card}>hi i'm {person}</h2>
+            <h2 className={styles.card}>ALLLL the starships</h2>
+            <ul>
+                {ships.map(ship => (
+                    <li key={uuid()}>{ship.model}</li>
+                ))}
+            </ul>
         </>
     )
 }
 
 AboutPage.getInitialProps = async () => {
-    console.log("getInitialProps");
+    axios.interceptors.response.use(response => response.data);
+    const { results } = await axios.get('https://swapi.dev/api/starships/');
 
-    const res = await fetch('https://swapi.dev/api/people/1/');
-    const json = await res.json();
-
-    return { person: json.name };
+    return { ships: results };
 }
 
 export default AboutPage;
