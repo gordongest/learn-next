@@ -3,24 +3,36 @@ import Navbar from "../components/Navbar";
 import '../styles/globals.css'
 
 const styles = {
-    position: "fixed",
-    bottom: "0px",
-    width: "100%",
-    display: "flex",
-    justifyContent: "center",
-    textAlign: "center",
-    marginBottom: "0",
-    backgroundColor: "#0066CC"
+    content: {
+        display: "flex",
+        // flexDirection: "column",
+        justifyContent: "center"
+    },
+    footer: {
+        position: "fixed",
+        bottom: "0px",
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+        textAlign: "center",
+        marginBottom: "0",
+        backgroundColor: "#0066CC",
+    },
+    h2: {
+        cursor: "pointer"
+    }
 }
 
 const MyApp = ({ Component, pageProps }) => {
     return (
         <>
             <Navbar />
-            <Component {...pageProps} />
+            <div style={styles.content}>
+                <Component {...pageProps} />
+            </div>
             <Link href="/">
-                <div style={styles}>
-                    <h2 className="footer content" style={{cursor: "pointer"}}>it a footer</h2>
+                <div style={styles.footer}>
+                    <h2 style={styles.h2}>it a footer</h2>
                 </div>
             </Link>
         </>
