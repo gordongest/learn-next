@@ -1,13 +1,25 @@
 import Navbar from "../components/Navbar";
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
+const styles = {
+    footer: {
+      position: "fixed",
+      bottom: "0px",
+      width: "100%"
+    },
+    content: {
+        textAlign: "center"
+    }
+}
+
+const MyApp = ({ Component, pageProps }) => {
     return (
         <>
             <Navbar />
             <Component {...pageProps} />
+            <h1 className="footer content" style={styles}>it a footer</h1>
         </>
-    )
+    );
 }
 
 // Only uncomment this method if you have blocking data requirements for

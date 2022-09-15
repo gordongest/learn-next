@@ -13,7 +13,6 @@ const buttonStyles = {
 }
 
 const Hello = () => {
-    console.log("bing")
     return (
         <div /*className={styles.grid}*/>
             <Link href="contact">
