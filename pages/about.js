@@ -13,7 +13,7 @@ const AboutPage = ({ films }) => {
                 pathname: "/film",
                 query: { film: JSON.stringify(film) }
             },
-            `${film.title.replace(/ /g,'').toLowerCase()}`,
+            `${film.title.replace(/ /g,'').toLowerCase()}`
         );
     }
 
