@@ -1,4 +1,3 @@
-import Link from "next/link";
 import axios from "axios";
 import { v4 as uuid } from "uuid";
 import styles from '../styles/Home.module.css'
@@ -19,16 +18,18 @@ const AboutPage = ({ films }) => {
     }
 
     return (
-        <>
+        <div>
             <h2 className={styles.card}>ALLLL the movies</h2>
             <ul>
                 {films.map((film) => (
-                    <li key={uuid()} onClick={e => handleClick(e, film)}>
-                        {film.title}
+                    <li key={uuid()} onClick={e => handleClick(e, film)} style={{cursor: "pointer"}}>
+                        <h5>
+                            {film.title}
+                        </h5>
                     </li>
                 ))}
             </ul>
-        </>
+        </div>
     )
 }
 
