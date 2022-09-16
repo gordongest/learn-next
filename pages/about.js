@@ -3,7 +3,7 @@ import axios from "axios";
 import { v4 as uuid } from "uuid";
 import styles from '../styles/Home.module.css'
 
-const AboutPage = ({ films }) => {
+const MoviesPage = ({ films }) => {
     const router = useRouter();
 
     const handleClick = (e, film) => {
@@ -47,5 +47,5 @@ export const getStaticProps = async () => {
     return { props: { films: results } };
 }
 
-export default AboutPage;
+export default MoviesPage;
 

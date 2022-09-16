@@ -12,7 +12,7 @@ const buttonStyles = {
     margin: "0 auto"
 }
 
-const Hello = () => {
+const IndexPage = () => {
     return (
         <div /*className={styles.grid}*/>
             <Link href="contact">
@@ -22,4 +22,4 @@ const Hello = () => {
     )
 }
 
-export default Hello;
+export default IndexPage;

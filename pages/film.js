@@ -8,7 +8,7 @@ const styles = {
     width: "50%"
 }
 
-const Film = () =>{
+const FilmPage = () =>{
     const router = useRouter();
     const  { title, director, producer, opening_crawl } = JSON.parse(router.query.film);
 
@@ -22,4 +22,4 @@ const Film = () =>{
     )
 }
 
-export default Film;
+export default FilmPage;
