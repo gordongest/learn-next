@@ -13,7 +13,7 @@ const AboutPage = ({ films }) => {
                 pathname: "/film",
                 query: { film: JSON.stringify(film) }
             },
-            `${film.title.replace(/ /g,'')}`,
+            `${film.title.replace(/ /g,'').toLowerCase()}`,
         );
     }
 
@@ -40,7 +40,7 @@ const AboutPage = ({ films }) => {
 //     return { films: results };
 // }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
     const res = await axios.get('https://swapi.dev/api/films/');
     const { results } = res.data;
 
