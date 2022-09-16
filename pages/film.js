@@ -22,11 +22,4 @@ const Film = () =>{
     )
 }
 
-// Film.getInitialProps = async ({ query }) => {
-//     const { title, director, producer, opening_crawl } = await axios
-//         .get(`https://swapi.dev/api/films/${query.id}`);
-//
-//     return { ...query, title, director, producer, opening_crawl };
-// }
-
 export default Film;
