@@ -1,7 +1,7 @@
+import { useRouter } from "next/router";
 import axios from "axios";
 import { v4 as uuid } from "uuid";
 import styles from '../styles/Home.module.css'
-import { useRouter } from "next/router";
 
 const AboutPage = ({ films }) => {
     const router = useRouter();
@@ -33,11 +33,18 @@ const AboutPage = ({ films }) => {
     )
 }
 
-AboutPage.getInitialProps = async () => {
-    axios.interceptors.response.use(response => response.data);
-    const { results } = await axios.get('https://swapi.dev/api/films/');
+// AboutPage.getInitialProps = async () => {
+//     axios.interceptors.response.use(response => response.data);
+//     const { results } = await axios.get('https://swapi.dev/api/films/');
+//
+//     return { films: results };
+// }
 
-    return { films: results };
+export const getServerSideProps = async () => {
+    const res = await axios.get('https://swapi.dev/api/films/');
+    const { results } = res.data;
+
+    return { props: { films: results } };
 }
 
 export default AboutPage;
