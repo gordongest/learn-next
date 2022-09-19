@@ -33,6 +33,7 @@ const MoviesPage = ({ films }) => {
     )
 }
 
+// deprecated
 // AboutPage.getInitialProps = async () => {
 //     axios.interceptors.response.use(response => response.data);
 //     const { results } = await axios.get('https://swapi.dev/api/films/');
@@ -40,6 +41,9 @@ const MoviesPage = ({ films }) => {
 //     return { films: results };
 // }
 
+// use this or getServerSideProps instead
+// getStaticProps runs only on build, getServerSideProps runs on each page request
+// use getStaticProps when data will not change during lifecycle
 export const getStaticProps = async () => {
     const res = await axios.get('https://swapi.dev/api/films/');
     const { results } = res.data;
