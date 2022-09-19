@@ -1,23 +1,30 @@
 import { useRouter } from "next/router";
 
 const styles = {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "50%"
+    div: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "50%"
+    },
+    p: {
+        color: "yellow",
+        fontSize: "2.5rem",
+        fontWeight: "bold"
+    }
 }
 
 const FilmPage = () =>{
-    const router = useRouter();
-    const  { title, director, producer, opening_crawl } = JSON.parse(router.query.film);
+    const { query } = useRouter();
+    const { title, director, producer, opening_crawl } = JSON.parse(query.film);
 
     return (
-        <div style={styles}>
+        <div style={styles.div}>
             <h1>{title}</h1>
             <h2>Directed by {director}</h2>
             <h3>Produced by {producer}</h3>
-            <p>{opening_crawl}</p>
+            <p style={styles.p}>{opening_crawl}</p>
         </div>
     )
 }

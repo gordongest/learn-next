@@ -8,7 +8,8 @@ const MoviesPage = ({ films }) => {
 
     const handleClick = (e, film) => {
         e.preventDefault();
-        router.push(
+        // use 'void' operator here to ensure that any effects from returned promise do not affect downstream code
+        void router.push(
         {
                 pathname: "/film",
                 query: { film: JSON.stringify(film) }
